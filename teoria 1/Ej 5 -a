@@ -1,0 +1,28 @@
+//5) Idem. al ejercicio anterior salvo que se imprimirá un mensaje de saludo diferente según sea el nombre ingresado por el 
+//usuario. Así para “Juan” debe imprimir “¡Hola amigo!”, para “María” debe imprimir “Buen día señora”, para “Alberto” debe
+//imprimir “Hola Alberto”. En otro caso, debe imprimir “Buen día ” seguido del nombre ingresado o “¡Buen día mundo!” si se ha
+// ingresado una línea vacía.
+//a) utilizando if ... else if
+Console.WriteLine("Esciba su nombre: ");
+String st = Console.ReadLine();
+if (st == "")
+{
+    Console.WriteLine("Buen dia Mundo");
+}
+else {if (st == "Juan"){
+        Console.WriteLine("¡Hola amigo!");
+    }
+    else {
+        if (st == "Maria"){
+            Console.WriteLine("Buen día señora");
+        }
+        else {
+            if (st == "Alberto"){
+                Console.WriteLine("Hola Alberto");
+            }
+            else{
+                Console.WriteLine("Buen dia "+st);
+            }
+        }
+    }
+}
