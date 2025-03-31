@@ -1,0 +1,3 @@
+3) ¿Qué diferencias existen entre las conversiones de tipo implícitas y explícitas?
+Las conversiones implícitas se realizan cuando las mismas son seguras (int a double, byte a int). En las explícitas el programador se hace cargo de la seguridad de la
+operación. En las implícitas puede existir una pérdida de precisión pero no de magnitud
