@@ -1,0 +1,12 @@
+//11) ¿Para qué sirve el método Split de la clase string? Usarlo para escribir en la consola todas las palabras (una por línea) de
+//una frase ingresada por consola por el usuario.
+//Split se usa para dividir una cadena delimitada en subcadenas. Puede usar una matriz de caracteres o una matriz de cadenas para
+//especificar cero o más caracteres o cadenas delimitadores. Si no se especifica ningún carácter delimitador, la cadena se divide
+//en caracteres de espacio en blanco
+Console.WriteLine("Ingrese una frase");
+string st = Console.ReadLine();
+string[] vst = st.Split(" ");
+foreach (var sub in vst)
+{
+    Console.WriteLine($"Substring: {sub}");
+}
