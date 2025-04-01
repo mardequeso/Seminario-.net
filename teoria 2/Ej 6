@@ -1,0 +1,5 @@
+6) Supongamos que Program.cs sólo tiene las siguientes dos líneas:
+int i;
+Console.WriteLine(i);
+¿Por qué no compila?
+No compila ya que la variable i no posee un valor asignado
