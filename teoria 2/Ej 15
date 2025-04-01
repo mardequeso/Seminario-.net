@@ -1,0 +1,4 @@
+//15) Determinar qué hace el siguiente programa y explicar qué sucede si no se pasan parámetros cuando se invoca desde la línea
+//de comandos.
+Console.WriteLine("¡Hola {0}!", args[0]);
+//Si no se pasan parámetros args[] está vacío(null), por lo que da error
