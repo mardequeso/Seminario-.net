@@ -1,0 +1,12 @@
+//18) Escribir una función (método int Fac(int n)) que calcule el factorial de un número n pasado al programa como parámetro por
+//la línea de comando
+//b) Definiendo una función recursiva
+Console.WriteLine(Fac (int.Parse(args[0])));
+int Fac(int n){
+    if (n == 0 || n == 1){
+        return 1;
+    }
+    else {
+        return n *= Fac((n-1));
+    }
+}
