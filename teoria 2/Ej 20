@@ -1,0 +1,11 @@
+//20) Codificar el método Swap que recibe 2 parámetros enteros e intercambia sus valores. El cambio debe apreciarse en el método
+//invocador.
+int a = 2, b =8;
+Swapp(ref a, ref b);
+Console.WriteLine(a +" y "+ b);
+
+void Swapp (ref int a, ref int b){
+    int interm = a;
+    a = b;
+    b = interm;
+}
