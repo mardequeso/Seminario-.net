@@ -1,0 +1,15 @@
+
+//19) Idem. al ejercicio 18.a) y 18.b) pero devolviendo el resultado en un parámetro de salida void Fac(int n, out int f)
+int r ;
+Fac (int.Parse(args[0]),out r);
+Console.WriteLine(r);
+
+void Fac(int n, out int f){
+    if (n == 0 || n == 1){
+        f = 1;
+    }
+    else {
+        Fac(n - 1, out f);
+        f *= n;
+        }
+    }
