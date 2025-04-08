@@ -1,0 +1,5 @@
+14) ¿Qué hace la instrucción? ¿Asigna a la variable vector el valor null?
+
+int[]? vector = new int[0];
+
+A la variable vector no se le asigna null sino que es un arreglo con 0 espacios
