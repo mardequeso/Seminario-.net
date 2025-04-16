@@ -1,0 +1,15 @@
+//2) Implementar un método para imprimir por consola todos los elementos de una matriz (arreglo de dos dimensiones) pasada como
+//parámetro. Debe imprimir todos los elementos de una fila en la misma línea en la consola.
+//Ayuda: Si A es un arreglo, A.GetLength(i) devuelve la longitud del arreglo en la dimensión i.
+double[,] matriz = new double[2,2] {{2, 3}, {6,1}};
+ImprimirMatriz(matriz);
+
+void ImprimirMatriz(double[,] matriz){
+    int m = matriz.GetLength(0);
+    int n = matriz.GetLength(1);
+    for (int i = 0; i < m; i++){
+        for (int j = 0; j < n; j++){
+            Console.WriteLine("f: " + i + " c: " + j + " e: " + matriz[i,j]);
+        }
+    }
+}
