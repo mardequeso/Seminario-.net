@@ -1,0 +1,49 @@
+//4) Implementar los métodos GetDiagonalPrincipal y GetDiagonalSecundaria que devuelven un vector con la diagonal correspondiente
+//de la matriz pasada como parámetro. Si la matriz no es cuadrada generar una excepción ArgumentException.
+double [,] matriz = new double[2,2] {{2.2,5.43},{1.12,6.4}};
+try{
+    double[] vector = GetDiagonalSecundaria(matriz);
+    for (int i = 0; i < vector.Length; i++){
+        Console.WriteLine(vector[i]);
+    }
+}
+catch (Exception e){
+    Console.WriteLine(e.Message);
+}
+try{
+    double[] vector = GetDiagonalPrincipal(matriz);
+    for (int i = 0; i < vector.Length; i++){
+        Console.WriteLine(vector[i]);
+    }
+}
+catch (Exception e){
+    Console.WriteLine(e.Message);
+}
+
+double[] GetDiagonalPrincipal(double[,] matriz){
+    if (matriz.GetLength(0)==matriz.GetLength(1)){
+        int d = matriz.GetLength(0);
+        double[] vector = new double[d];
+        for (int i = 0; i < d; i++){
+            vector[i] = matriz[i,i];
+        }
+        return vector;
+    }
+    else{
+        throw new ArgumentException();
+    }
+}
+double[] GetDiagonalSecundaria(double[,] matriz){
+    if(matriz.GetLength(0)==matriz.GetLength(1)){
+        int i = matriz.GetLength(0);
+        double[] vector = new double[i];
+        int j = 0;
+        for (; i > 0;){
+            vector[j] = matriz[j++,--i];
+        }
+        return vector;
+    }
+    else{
+        throw new ArgumentException();
+    }
+}
