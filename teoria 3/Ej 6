@@ -1,0 +1,43 @@
+//6) Implementar los siguientes métodos que devuelvan la suma, resta y multiplicación de matrices pasadas como parámetros. Para el
+//caso de la suma y la resta, las matrices deben ser del mismo tamaño, en caso de no serlo devolver null. Para el caso de la
+//multiplicación la cantidad de columnas de A debe ser igual a la cantidad de filas de B, en caso contrario generar una excepción
+//ArgumentException.
+double[,] A = new double[2,1]{{2.5},{3}};
+double[,] B = new double[2,1]{{4.2},{1.6}};
+double[,] suma = Suma(A,B);
+double[,] resta = Resta(A,B);
+Console.Read();
+
+double[,]? Suma(double[,] A, double[,] B){
+    if ((A.GetLength(0) == B.GetLength(0)) && (A.GetLength(1) == B.GetLength(1))) {
+        int f = A.GetLength(0);
+        int c = A.GetLength(1);
+        double[,] matriz = new double[f,c];
+        for (int i = 0; i < f; i++){
+            for (int j = 0; j < c; j++){
+                matriz[i,j] = A[i,j] + B[i,j];
+            }
+        }
+        return matriz;
+    }
+    else {
+        return null;
+    }
+}
+double[,]? Resta(double[,] A, double[,] B){
+    if ((A.GetLength(0) == B.GetLength(0)) && (A.GetLength(1) == B.GetLength(1))) {
+        int f = A.GetLength(0);
+        int c = A.GetLength(1);
+        double[,] matriz = new double[f,c];
+        for (int i = 0; i < f; i++){
+            for (int j = 0; j < c; j++){
+                matriz[i,j] = A[i,j] - B[i,j];
+            }
+        }
+        return matriz;
+    }
+    else {
+        return null;
+    }
+}
+//double[,] Multiplicacion(double[,] A, double[,] B) ODIO MULTIPLICAR MATRICES
