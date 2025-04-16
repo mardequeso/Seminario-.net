@@ -1,0 +1,15 @@
+//3) Implementar el método ImprimirMatrizConFormato, similar al anterior pero ahora con un parámetro más que representa la
+//plantilla de formato que debe aplicarse a los números al imprimirse. La plantilla de formato es un string de acuerdo a las
+//convenciones de formato compuesto, por ejemplo “0.0” implica escribir los valores reales con un dígito para la parte decimal.
+double[,] matriz = new double[2,2] {{2.3, 3.123}, {6.21,1.7286}};
+ImprimirMatrizConFormato(matriz, "0.000");
+
+void ImprimirMatrizConFormato(double[,] matriz, string formatString){
+    int m = matriz.GetLength(0);
+    int n = matriz.GetLength(1);
+    for (int i = 0; i < m; i++){
+        for (int j = 0; j < n; j++){
+            Console.WriteLine("f: " + i + " c: " + j + " e: " + matriz[i,j].ToString(formatString));
+        }
+    }
+}
