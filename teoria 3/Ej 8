@@ -1,0 +1,6 @@
+8) Señalar errores de compilación y/o ejecución en el siguiente código
+
+object obj = new int[10];
+dynamic dyna = 13;
+Console.WriteLine(obj.Length); // falta un cast para el object ( (int[])obt).Length
+Console.WriteLine(dyna.Length); // el tipo actual guardado en dyna es un int y no posee método .Length
