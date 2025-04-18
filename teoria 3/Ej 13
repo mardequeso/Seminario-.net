@@ -1,0 +1,13 @@
+//13) Utilizar la clase Stack<T> (pila) para implementar un programa que pase un número en base 10 a otra base realizando
+//divisiones sucesivas. Por ejemplo para pasar 35 en base 10 a binario dividimos sucesivamente por dos hasta encontrar un cociente
+//menor que el divisor, luego el resultado se obtiene leyendo de abajo hacia arriba el cociente de la última división seguida por
+//todos los restos.
+int n = Convert.ToInt32(Console.ReadLine());
+Stack<int> lista = new Stack<int>();
+for(int i = 0; i < n;){
+    lista.Push(n%2);
+    n /= 2;
+}
+for (int i = 0; i < lista.Count;){
+    Console.Write(lista.Pop());
+}
