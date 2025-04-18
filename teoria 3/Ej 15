@@ -1,4 +1,4 @@
-//15) ¿Qué salida por la consola produce el siguiente código?
+//15) ¿Qué salida por la consola produce el siguiente código? ¿Qué se puede inferir respecto de la excepción división por cero en relación al tipo de los operandos?
 int x = 0;
 try
 {
@@ -10,3 +10,5 @@ catch (Exception e)
 {
 Console.WriteLine(e.Message); // no se puede dividir por 0
 }
+
+La excepción división por cero solo se da con operandos de tipo int
