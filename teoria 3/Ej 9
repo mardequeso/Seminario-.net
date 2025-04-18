@@ -1,0 +1,17 @@
+var a = 3L;
+dynamic b = 32;
+object obj = 3;
+a = a * 2.0; // error de compilacion ya que la variable a es de tipo long, no puede convertirse en double implicitamente ni la variable double podrá luego volver a convertirse en long implicitamente.
+b = b * 2.0;
+b = "hola";
+obj = b;
+b = b + 11;
+obj = obj + 11; // error de compilacion ya que no se hace un cast para el tipo object
+var c = new { Nombre = "Juan" };
+var d = new { Nombre = "María" };
+var e = new { Nombre = "Maria", Edad = 20 };
+var f = new { Edad = 20, Nombre = "Maria" };
+f.Edad = 22; // error de compilacion ya que la variable f es de solo lectura
+d = c;
+e = d; //error de compilacion ya que e y d no son del mismo tipo
+f = e; //error de compilacion ya que e y d no son del mismo tipo (Edad y Nombre se ecuentran en distinto orden)
