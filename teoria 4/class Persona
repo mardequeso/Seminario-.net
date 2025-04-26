@@ -1,0 +1,4 @@
+public class Persona(string nombre, int edad, int dni)
+{
+    public string ToString () => (nombre + " " + edad + " " + dni);
+}
