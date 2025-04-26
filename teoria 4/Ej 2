@@ -1,0 +1,12 @@
+//2) Modificar el programa anterior haciendo privados todos los campos. Definir un constructor adecuado y un método público
+//Imprimir() que escriba en la consola los campos del objeto con el formato requerido para el listado.
+using Automotores;
+Console.WriteLine("Ingrese el nombre, edad y dni de las 4 personas");
+Persona a = new Persona(Console.ReadLine(), int.Parse(Console.ReadLine()),int.Parse(Console.ReadLine()));
+Persona b = new Persona(Console.ReadLine(), int.Parse(Console.ReadLine()),int.Parse(Console.ReadLine()));
+Persona c = new Persona(Console.ReadLine(), int.Parse(Console.ReadLine()),int.Parse(Console.ReadLine()));
+Persona d = new Persona(Console.ReadLine(), int.Parse(Console.ReadLine()),int.Parse(Console.ReadLine()));
+a.Imprimir(1);
+b.Imprimir(2);
+c.Imprimir(3);
+d.Imprimir(4);
