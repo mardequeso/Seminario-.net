@@ -1,0 +1,46 @@
+//3) Agregar a la clase Persona un método EsMayorQue(Persona p) que devuelva verdadero si la persona que recibe el mensaje tiene
+//más edad que la persona enviada como parámetro. Utilizarlo para realizar un programa que devuelva la persona más jóven de la
+//lista.
+using Automotores;
+
+Console.WriteLine("Ingrese el nombre, edad y dni de las 4 personas");
+Persona a = new Persona(Console.ReadLine(), int.Parse(Console.ReadLine()),int.Parse(Console.ReadLine()));
+Persona b = new Persona(Console.ReadLine(), int.Parse(Console.ReadLine()),int.Parse(Console.ReadLine()));
+Persona c = new Persona(Console.ReadLine(), int.Parse(Console.ReadLine()),int.Parse(Console.ReadLine()));
+Persona d = new Persona(Console.ReadLine(), int.Parse(Console.ReadLine()),int.Parse(Console.ReadLine()));
+if (a.EsMayorQue(b)){
+    if (b.EsMayorQue(c)){
+        if (c.EsMayorQue(d)){
+            Console.WriteLine("El menor es " + d.GetNombre());
+        }
+        else {
+            Console.WriteLine("El menor es " + c.GetNombre());
+        }
+    }
+    else {
+        if (b.EsMayorQue(d)){
+            Console.WriteLine("El menor es " + d.GetNombre());
+        }
+        else {
+            Console.WriteLine("El menor es " + b.GetNombre());
+        }
+    }
+}
+else {
+    if (a.EsMayorQue(c)){
+        if (c.EsMayorQue(d)){
+            Console.WriteLine("El menor es " + d.GetNombre());
+        }
+        else {
+            Console.WriteLine("El menor es " + c.GetNombre());
+        }
+    }
+    else {
+        if (a.EsMayorQue(d)){
+            Console.WriteLine("El menor es " + d.GetNombre());
+        }
+        else {
+            Console.WriteLine("El menor es " + a.GetNombre());
+        }
+    }
+}
