@@ -1,0 +1,54 @@
+namespace Automotores;
+
+public class Cuenta{
+    private double _monto;
+    private int _titularDNI;
+    private string? _titularNobre;
+    public Cuenta (string nombre, int DNI, double monto){
+        _titularNobre = nombre;
+        _titularDNI = DNI;
+        _monto = monto;
+    }
+    public Cuenta (string nombre, int DNI){
+        _titularNobre = nombre;
+        _titularDNI = DNI;
+        _monto = 0;
+    }
+    public Cuenta (string nombre){
+        _titularNobre = nombre;
+        _titularDNI = -1;
+        _monto = 0;
+    }
+    public Cuenta (int DNI){
+        _titularDNI = DNI;
+        _monto = 0;
+    }public Cuenta (){
+        _titularDNI = -1;
+        _monto = 0;
+    }
+    public void Imprimir(){
+        string st = " Nombre: ";
+        st += _titularNobre ?? "No especificado";
+        st += " DNI: ";
+        if (_titularDNI != -1){
+            st += _titularDNI;
+        }
+        else{
+            st+= "No especificado";
+        }
+        st += " Monto: " + _monto;
+        Console.WriteLine(st);
+    }
+    public void Depositar(double deposito){
+        _monto += deposito;
+    }
+    public void Extraer(double extraccion){
+        if (extraccion > _monto){
+            Console.WriteLine("Operación cancelada, monto insuficiente");
+        }
+        else{
+            _monto-= extraccion;
+        }
+    }
+
+}
