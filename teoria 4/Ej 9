@@ -1,0 +1,18 @@
+//9) ¿Qué se puede decir en relación a la sobrecarga de métodos en este ejemplo?
+
+class A
+{
+public void Metodo(short n) {
+Console.Write("short {0} - ", n);
+}
+public void Metodo(int n) {
+Console.Write("int {0} - ", n);
+}
+public int Metodo(int n) {
+return n + 10;
+}
+}
+
+// no hay problemas ya que todos poseen parámetros y/o retornos diferentes entre sí. El primero es de tipo void y recibe un parámetro de tipo short; el segundo también
+es de tipo void pero recibe un parámetro de tipo int; el último si bien también recibe un parámetro de tipo int, deberá retornar un dato de este mismo tipo. Solo
+existiría problema si se quisiera utilizar el segundo método pero se enviara un número demasiado corto ya que el programa iría por el camino más preciso
