@@ -1,4 +1,11 @@
+namespace Automotores;
+
 public class Persona(string nombre, int edad, int dni)
 {
     public string ToString () => (nombre + " " + edad + " " + dni);
+    public void Imprimir(int n) => Console.WriteLine(n +" " + this.ToString());
+    public string GetNombre() => nombre;
+    public int GetEdad() => edad;
+    public int GetDni() => dni;
+    public bool EsMayorQue(Persona p) => edad > p.GetEdad();
 }
