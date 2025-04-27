@@ -1,0 +1,10 @@
+namespace Automotores;
+
+public class Hora(int horas, int minutos, int segundos)
+{
+    public string ToString () => (horas + " horas, " + minutos + " minutos y " + segundos + " segundos");
+    public void Imprimir() => Console.WriteLine(this.ToString());
+    public int GetHoras() => horas;
+    public int GetMinutos() => minutos;
+    public int GetSegundos() => segundos;
+}
