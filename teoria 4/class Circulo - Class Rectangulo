@@ -1,0 +1,13 @@
+namespace Figuras;
+
+public class Circulo (double _radio){
+    public double GetArea() => Math.PI * Math.Pow(_radio,2);
+}
+
+using System;
+
+namespace Figuras;
+
+public class Rectangulo(double _base, double _altura){
+    public double GetArea() => _base * _altura;
+}
