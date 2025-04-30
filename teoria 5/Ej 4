@@ -13,3 +13,40 @@ class A {
 // Es correcta; suma dos veces en s_a.
 
 b)
+class A {
+static int s_a = 0;
+public static A() {
+s_a++;
+}
+A() {
+s_a++;
+}
+}
+// el constructor estático no debería ser público mientras el otro si
+
+c)
+class A {
+static int s_a = 0;
+static A(int a) {
+s_a=a;
+}
+A(int a) {
+s_a = a;
+}
+}
+
+// el método estático no debe poseer parámetro, el constructor debe ser público
+
+d)
+class A {
+static int s_a = 0;
+int a = 0;
+static A() {
+s_a = 30;
+}
+A(int a) {
+s_a = a;
+this.a = a;
+}
+}
+// falta el public en el constructor de instancia; s_a se sobreescribe
