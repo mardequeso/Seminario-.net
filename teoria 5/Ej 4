@@ -50,3 +50,89 @@ this.a = a;
 }
 }
 // falta el public en el constructor de instancia; s_a se sobreescribe
+
+e) 
+class A {
+static int s_a = 0;
+int a = 0;
+static A() {
+a = 30;
+}
+A(int a) {
+a = s_a;
+}
+}
+// el código estático no puede acceder a un campo no estático
+
+f)
+class A
+{
+static int s_a = 1;
+int a = 0;
+static A() => s_a += s_a;
+public static A GetInstancia() => new A(1);
+A(int a) => this.a = a + s_a;
+}
+// falta el public del constructor de instancia
+
+g)
+class A
+{
+const double PI = 3.1416;
+static double DoblePI = 2 * PI;
+}
+// no hay problemas
+
+h)
+class A
+{
+static double PI = 3.1416;
+const double DoblePI = 2*PI;
+}
+// no se puede conocer el valor de DoblePI en tiempo de compilación
+
+i)
+class A {
+static readonly List<int> _lista;
+static A() {
+_lista = new List<int>();
+}
+public static void P(int i) {
+_lista.Add(i);
+}
+}
+//no posee errores
+
+j)
+class A {
+static readonly List<int> _lista;
+static A() {
+_lista = new List<int>();
+}
+public static void P(List<int> li) {
+_lista = li;
+}
+}
+//no se le puede asignar al campo de tipo readonly por fuera de su inicialización o un constructor
+
+k)
+class A
+{
+static int[] vector = { 1, 2, 3 };
+public int this[int i]
+{
+get { return vector[i]; }
+}
+}
+// no hay problemas
+
+l)
+class A
+{
+static int[] vector = { 1, 2, 3 };
+public static int this[int i]
+{
+get { return vector[i]; }
+}
+}
+//el método no puede ser de tipo estático
