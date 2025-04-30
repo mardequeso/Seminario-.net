@@ -11,11 +11,14 @@ public class Cuenta{
     private static int s_TotExtraccion = 0;
     private static int s_TotDeposito = 0;
     private static int s_ExtraccionesDenegadas = 0;
+
+    private static List<Cuenta> s_Cuentas = new List<Cuenta>();
     public Cuenta () {
         _Monto = 0;
         s_CantCuentas += 1; 
         _ID = s_CantCuentas;
         Console.WriteLine("Se creó la cuenta Id=" + _ID);
+        s_Cuentas.Add(this);
     }
     public Cuenta Depositar(int deposito){
         _Monto += deposito;
@@ -40,4 +43,5 @@ public class Cuenta{
     public static void ImprimirDetalle(){
         Console.WriteLine("CUENTAS CREADAS: " + s_CantCuentas + "\nDEPÓSITOS: " + s_Depositos + "- Total depositado: " + s_TotDeposito + "\nEXTRACCIONES: " + s_Extracciones + " - Total extraído: " + s_TotExtraccion + "\n- Saldo " + (s_TotDeposito - s_TotExtraccion) + "\n* Se denegaron " + s_ExtraccionesDenegadas + " extracciones por falta de fondos");
     }
+    public static List<Cuenta> GetCuentas() => new List<Cuenta> (s_Cuentas);
 }
