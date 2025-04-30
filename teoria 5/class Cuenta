@@ -1,0 +1,43 @@
+using System;
+
+namespace teoria1;
+
+public class Cuenta{
+    private int _Monto;
+    private int _ID;
+    private static int s_CantCuentas = 0;
+    private static int s_Extracciones = 0;
+    private static int s_Depositos = 0;
+    private static int s_TotExtraccion = 0;
+    private static int s_TotDeposito = 0;
+    private static int s_ExtraccionesDenegadas = 0;
+    public Cuenta () {
+        _Monto = 0;
+        s_CantCuentas += 1; 
+        _ID = s_CantCuentas;
+        Console.WriteLine("Se creó la cuenta Id=" + _ID);
+    }
+    public Cuenta Depositar(int deposito){
+        _Monto += deposito;
+        s_Depositos++;
+        s_TotDeposito += deposito;
+        Console.WriteLine("Se depositó " + deposito + " en la cuenta " + _ID + " (Saldo=" + _Monto + ")");
+        return this;
+    }
+    public Cuenta Extraer(int extraccion){
+        if (_Monto < extraccion){
+            Console.WriteLine("Operación denegada - Saldo insuficiente");
+            s_ExtraccionesDenegadas++;
+        }
+        else {
+            _Monto -= extraccion;
+            s_Extracciones++;
+            s_TotExtraccion += extraccion;
+            Console.WriteLine("Se extrajo " + extraccion + " de la cuenta " + _ID + " (Saldo=" + _Monto + ")");
+        }
+        return this;
+    }
+    public static void ImprimirDetalle(){
+        Console.WriteLine("CUENTAS CREADAS: " + s_CantCuentas + "\nDEPÓSITOS: " + s_Depositos + "- Total depositado: " + s_TotDeposito + "\nEXTRACCIONES: " + s_Extracciones + " - Total extraído: " + s_TotExtraccion + "\n- Saldo " + (s_TotDeposito - s_TotExtraccion) + "\n* Se denegaron " + s_ExtraccionesDenegadas + " extracciones por falta de fondos");
+    }
+}
