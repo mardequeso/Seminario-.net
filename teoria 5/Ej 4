@@ -1,0 +1,11 @@
+//4) Indicar en cada caso si la definición de la clase A es correcta, en caso de no serlo detallar cuál es el error.
+
+class A {
+  static int s_a=0;
+  static A() {
+  s_a++;
+}
+  public A() {
+    s_a++;
+  }
+}
