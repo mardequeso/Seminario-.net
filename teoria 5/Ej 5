@@ -1,0 +1,15 @@
+//5) Qué líneas del código siguiente provocan error de compilación? Analizar cuándo es posible acceder a miembros estáticos y de instancia.
+class A {
+  char c;
+  static string st;
+  void metodo1(){
+    st = "string";
+    c = 'A';
+  }
+  static void metodo2() {
+    new ClaseA().c = 'a'; //ClaseA no existe
+    st = "st2";
+    c = 'B'; // no se puede utilizar el campo c desde un método estático
+    new A().st = "otro string"; // para poder utilizar se debería usar como st o A.st
+  }
+}
