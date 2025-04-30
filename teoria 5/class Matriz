@@ -1,0 +1,123 @@
+using System;
+
+namespace teoria1;
+
+using System.Dynamic;
+
+//6) Modificar la definición de la clase Matriz realizada en la práctica 4. Eliminar los métodos SetElemento() y GetElemento().
+//Definir un indizador adecuado para leer y escribir elementos de la matriz. Eliminar los métodos GetDiagonalPrincipal() y
+//GetDiagonalSecundaria() reemplazándolos por las propiedades de sólo lectura DiagonalPrincipal y DiagonalSecundaria.
+
+using System.Numerics;
+
+public class Matriz{
+    private int filas;
+    private int columnas;
+    private double [,] matriz;
+    public Matriz(int filas, int columnas){
+        this.filas = filas;
+        this.columnas = columnas;
+        matriz = new double[filas,columnas];
+    }
+    public Matriz(double[,] matriz){
+        this.matriz = matriz;
+    }
+    public double this[int f, int c]{
+        set => matriz[f,c] = value;
+        get => matriz[f,c];
+    }
+    public void imprimir(){
+        for (int i = 0; i < filas; i++){
+            for (int j = 0; j < columnas; j++){
+                Console.WriteLine("fila " + i + " columna " + j + " " + matriz[i,j]);
+            }
+        }
+    }
+    public void imprimir(string formatString){
+        for (int i = 0; i < filas; i++){
+            for (int j = 0; j < columnas; j++){
+                Console.WriteLine("fila " + i + " columna " + j + " " + matriz[i,j],formatString);
+            }
+        }
+    }
+    public int GetFilas() => filas;
+    public int GetColumnas() => columnas;
+    public double[] GetFila(int fila){
+        double [] vector = new double[columnas];
+        for (int i = 0; i < columnas; i++){
+            vector[i] = matriz[fila,i];
+        }
+        return vector;
+    }
+    public double[] GetColumna(int columna){
+        double [] vector = new double[filas];
+        for (int i = 0; i < filas; i++){
+            vector[i] = matriz[i,columna];
+        }
+        return vector;
+    }
+    public double[] GetDiagonalPrincipal{
+        get {
+            if (filas != columnas){
+                return null;
+            }
+            else {
+                double[]vector = new double[filas];
+                for (int i = 0; i < filas; i++){
+                    vector [i] = matriz[i,i];
+                }
+                return vector;
+            }
+        }
+    }
+    public double[] GetDiagonalSecundaria{
+        get{
+            if (filas != columnas){
+                return null;
+            }
+            else {
+                double[] vector = new double[filas];
+                int j = filas;
+                for (int i = 0; i < filas; i++){
+                    j--;
+                    vector[i] = matriz[i,j];
+                }
+                return vector;
+            }
+        }
+    }
+    public double[][] getArregloDeArreglo(){
+        if (matriz != null){
+            double[][] arreglo = new double[filas][];
+            for (int i = 0; i < filas; i++){
+                arreglo[i] = new double[columnas];
+                for (int j = 0; j < columnas; j++){
+                    arreglo[i][j] = matriz[i,j];
+                }
+            }
+            return arreglo;
+        }
+        else {
+            return null;
+        }
+    }
+    public void sumarle(Matriz m){
+        if ((matriz != null) && (filas == m.GetFilas()) && (columnas == m.GetColumnas())){
+            for (int i = 0; i < filas; i++){
+                for (int j = 0; j < columnas; j++){
+                    matriz[i,j] += m[i,j];
+                }
+            }
+        }
+    }
+    public void restarle(Matriz m){
+        if ((matriz != null) && (filas == m.GetFilas()) && (columnas == m.GetColumnas())){
+            for (int i = 0; i < filas; i++){
+                for (int j = 0; j < columnas; j++){
+                    matriz[i,j] -= m[i,j];
+                }
+            }
+        }
+    }
+    //public void multiplicarPor(Matriz m)
+}
