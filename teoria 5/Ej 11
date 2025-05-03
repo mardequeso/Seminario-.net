@@ -1,0 +1,5 @@
+// 11) ¿ Qué diferencia hay entre estas dos declaraciones?
+
+a) public int X = 3; y b) public int X => 3;
+
+// la instruccion a funciona como un setter, igualando el campo X a 3; mientras tanto, el b funciona como un getter, devolviendo 3 cuando se llame a este
