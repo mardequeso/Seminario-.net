@@ -26,12 +26,12 @@ class ListaDePersonas
             return null;
         }
     }
-    public List<Persona> this[char c]{
+    public List<String> this[char c]{
         get{
-            List<Persona> Lista = new List<Persona>;
+            List<String> Lista = new List<String>();
             for (int i = 0; i < _ListaP.Count;i++){
                 if (_ListaP[i].Nombre[0] == c){
-                    Lista.Add(_ListaP[i]);
+                    Lista.Add(_ListaP[i].Nombre);
                 }
             }
             return Lista;
