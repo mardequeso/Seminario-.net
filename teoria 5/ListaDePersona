@@ -1,0 +1,40 @@
+using System;
+using System.Runtime.Serialization.Formatters;
+
+namespace teoria1;
+
+//8) Dada la siguiente definición incompleta de clase. Completarla y agregar dos indizadores de sólo lectura. Un índice entero que
+//permite acceder a las personas de la lista por número de documento. Por ejemplo p=lista[30456345] devuelve el objeto Persona que
+//tiene DNI=30456345 o null en caso que no exista en la lista. Un índice de tipo char que devuelve un List<string> con todos los
+//nombres de las personas de la lista que comienzan con el carácter pasado como índice.
+class ListaDePersonas
+{
+    private List<Persona> _ListaP = new List<Persona>();
+    public void Agregar(Persona p){
+        _ListaP.Add(p);
+        }
+    public Persona this[int i]{
+        get{
+            int fin = _ListaP.Count;
+            int j = 0;
+            for (; j < fin; j++){
+                if (_ListaP[j].DNI == i){
+                    return _ListaP[i];
+                    break;
+                }
+            }
+            return null;
+        }
+    }
+    public List<Persona> this[char c]{
+        get{
+            List<Persona> Lista = new List<Persona>;
+            for (int i = 0; i < _ListaP.Count;i++){
+                if (_ListaP[i].Nombre[0] == c){
+                    Lista.Add(_ListaP[i]);
+                }
+            }
+            return Lista;
+        }
+    }
+}
