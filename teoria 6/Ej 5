@@ -1,0 +1,18 @@
+//5) ¿Qué líneas del siguiente código provocan error de compilación y por qué?
+class Persona
+{
+public string Nombre { get; set; }
+}
+
+public class Auto
+{
+private Persona _dueño1, _dueño2;
+public Persona GetPrimerDueño() => _dueño1;
+protected Persona SegundoDueño
+{
+set => _dueño2 = value;
+}
+}
+
+// GetPrimerDueño() y SegundoDueño generaran error ya que la clase Persona es interna mientras que los métodos son public y protected pero la clase base no puede ser
+// menos accesible que los mismos
