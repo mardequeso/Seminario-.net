@@ -1,3 +1,6 @@
+//1) Sin borrar ni modificar ninguna línea, completar la definición de las clases B, C y D
+//Para que el siguiente código produzca la salida indicada:
+
 using teoria1;
 A[] vector = [new A(3),new B(5),new C(15),new D(41)];
 foreach (A a in vector)
