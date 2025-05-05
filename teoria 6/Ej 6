@@ -1,0 +1,31 @@
+// 6) Señalar el error en cada uno de los siguientes casos:
+
+(6.1)
+class A
+{
+public string M1() => "A.M1"; // falta el modificador virtual
+}
+class B : A
+{
+public override string M1() => "B.M1";
+}
+
+(6.2)
+class A
+{
+public abstract string M1(); // el campo no puede ser abstracto si la clase no lo es
+}
+class B : A
+{
+public override string M1() => "B.M1";
+}
+
+(6.3)
+abstract class A
+{
+public abstract string M1() => "A.M1"; // una clase abstracta no puede tener cuerpo
+}
+class B : A
+{
+public override string M1() => "B.M1";
+}
