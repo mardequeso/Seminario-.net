@@ -1,0 +1,8 @@
+//4) Contestar sobre el siguiente programa:
+//¿Por qué no es necesario agregar :base en el constructor de Taxi?
+//Esto se debe a que existe un constructor vacío para auto y se inicializa el campo marca como "Ford"
+
+//Eliminar el segundo constructor de la clase Auto y modificar la clase Taxi para el programa siga funcionando.
+using teoria1;
+Taxi t = new Taxi(3);
+Console.WriteLine($"Un {t.Marca} con {t.Pasajeros} pasajeros");
