@@ -1,0 +1,15 @@
+using System;
+
+namespace teoria1;
+
+class Taxi : Auto {
+    public int Pasajeros { get; private set; }
+    public Taxi(int pasajeros) : base("Ford") => this.Pasajeros = pasajeros;
+}
+
+//ORIGINAL
+class Taxi : Auto
+{
+public int Pasajeros { get; private set; }
+public Taxi(int pasajeros) => this.Pasajeros = pasajeros;
+}
