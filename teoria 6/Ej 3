@@ -1,0 +1,15 @@
+// 3) ¿Por qué no funciona el siguiente código? ¿Cómo se puede solucionar fácilmente?
+
+class Auto
+{
+double velocidad;
+public virtual void Acelerar() => Console.WriteLine("Velocidad = {0}", velocidad += 10);
+}
+
+class Taxi : Auto
+{
+public override void Acelerar() => Console.WriteLine("Velocidad = {0}", velocidad += 5);
+}
+
+// esto se debe a que el miembro "velocidad" es de tipo privado y solo se podrá acceder dentro de la clase Auto; para poder modificarla dentro de la clase Taxi
+deberiamos usar un propiedad o cambiar el tipo de acceso
