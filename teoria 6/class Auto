@@ -1,0 +1,14 @@
+namespace teoria1;
+
+class Auto {
+    public string Marca { get; private set; }
+    public Auto(string marca) => this.Marca = marca;
+}
+
+//ORIGINAL
+class Auto
+{
+public string Marca { get; private set; } = "Ford";
+public Auto(string marca) => this.Marca = marca;
+public Auto() { }
+}
