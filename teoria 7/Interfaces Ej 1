@@ -1,0 +1,42 @@
+using System;
+
+namespace teoria1;
+
+public interface IAlquilable{
+    public void SeAlquila(Persona p);
+    public void SeDevuelve(Persona p);
+}
+
+using System;
+
+namespace teoria1;
+
+public interface IAtendible {
+    public void SeAtiende(); 
+}
+
+
+using System;
+
+namespace teoria1;
+
+public interface ILavable{
+    public void SeLava();
+    public void SeSeca();
+}
+
+using System;
+
+namespace teoria1;
+
+public interface IReciclabe{
+    public void SeRecicla();
+}
+
+using System;
+
+namespace teoria1;
+
+public interface IVendible{
+    public void SeVende(Persona p);
+}
