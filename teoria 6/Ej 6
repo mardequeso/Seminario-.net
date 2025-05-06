@@ -29,3 +29,101 @@ class B : A
 {
 public override string M1() => "B.M1";
 }
+
+(6.4)
+class A
+{
+public override string M1() => "A.M1"; // el método debe tener el modifiicador virtual, no override
+}
+class B : A
+{
+public override string M1() => "B.M1";
+}
+
+(6.5)
+class A
+{
+public virtual string M1() => "A.M1";
+}
+class B : A
+{
+protected override string M1() => "B.M1"; //no se puede cambiar el modificador de acceso al hacer override
+}
+
+(6.6)
+class A
+{
+public static virtual string M1() => "A.M1"; // no se puede usar el modificador virtual en un método estático
+}
+class B : A
+{
+public static override string M1() => "B.M1"; // no se puede usar el modificador override en un método estático
+}
+
+(6.7)
+class A
+{
+virtual string M1() => "A.M1"; //un método virtual debe ser obligatoriamente público
+}
+class B : A
+{
+override string M1() => "B.M1";
+}
+
+(6.8)
+class A
+{
+protected A(int i) { }
+}
+class B : A
+{
+B() { } // no se toma en cuenta el constructor de la clase base
+}
+
+(6.9)
+class A
+{
+private int _id;
+protected A(int i) => _id = i;
+}
+class B : A
+{
+B(int i):base(5) {
+_id = i; // no se puede acceder a _id ya que es un campo private de la clase A
+}
+}
+
+(6.10)
+class A
+{
+private int Propiedad { set; public get; } // el accesor no puede ser más accesible que la propiedad
+}
+class B : A
+{
+}
+
+(6.11)
+abstract class A
+{
+public abstract int Prop {set; get;}
+}
+class B : A
+{
+public override int Prop // no implementa el método abstracto heredado set
+{
+get => 5;
+}
+}
+
+(6.12)
+abstract class A
+{
+public int Prop {set; get;} //falta el modificador virtual
+}
+class B : A
+{
+public override int Prop {
+get => 5;
+set {}
+}
+}
