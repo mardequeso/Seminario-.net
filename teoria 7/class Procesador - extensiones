@@ -1,0 +1,60 @@
+using System;
+
+namespace teoria1;
+
+public static class Procesador {
+    public static void Alquilar(IAlquilable x, Persona p) => x.SeAlquila(p);
+    public static void Devolver(IAlquilable x, Persona p) => x.SeDevuelve(p);
+    public static void Atender(IAtendible x) => x.SeAtiende();
+    public static void Lavar(ILavable x) => x.SeLava();
+    public static void Secar(ILavable x) => x.SeSeca();
+    public static void Reciclar(IReciclabe x) => x.SeRecicla();
+    public static void Vender(IVendible x, Persona p) => x.SeVende(p);
+}
+
+using System;
+
+namespace teoria1;
+
+public class Auto: IVendible,ILavable,IReciclabe {
+    public void SeVende(Persona p) => Console.WriteLine("Vendiendo auto a persona");
+    public void SeLava() => Console.WriteLine("Lavando auto");
+    public void SeSeca() => Console.WriteLine("Secando auto");
+    public void SeRecicla()=> Console.WriteLine("Reciclando auto");
+}
+
+using System;
+
+namespace teoria1;
+
+public class Libro: IAlquilable,IReciclabe {
+    public void SeAlquila(Persona p) => Console.WriteLine("Alquilando libro a persona");
+    public void SeDevuelve(Persona p) => Console.WriteLine("Libro devuelto por persona");
+    public void SeRecicla() => Console.WriteLine("Reciclando libro");
+}
+
+using System;
+
+namespace teoria1;
+
+public class Pelicula: IAlquilable {
+    public void SeAlquila(Persona p) => Console.WriteLine("Alquilando película a persona");
+    public void SeDevuelve(Persona p) => Console.WriteLine("Película devuelta por persona");
+}
+
+using System;
+
+namespace teoria1;
+
+public class Perro: IVendible,IAtendible {
+    public void SeVende(Persona p) => Console.WriteLine("Vendiendo perro a persona");
+    public void SeAtiende() => Console.WriteLine("Atendiendo perro");
+}
+
+using System;
+
+namespace teoria1;
+
+public class Persona: IAtendible {
+    public void SeAtiende() => Console.WriteLine("Atendiendo persona");
+}
